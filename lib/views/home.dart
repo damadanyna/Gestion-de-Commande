@@ -113,32 +113,42 @@ class _HomePageState extends State<HomePage> {
                     children: const [
                       ScareBoxCat(
                           product: 'Chargeur',
-                          name: 'Dany',
+                          nameOfFournisseur: 'Dany',
+                          description:
+                              'Ce ci est un déscription simple ou détaillé du produits',
                           image: 'assets/imgComp/img_4.jpg',
                           prix: 20000),
                       SizedBox(width: 10),
                       ScareBoxCat(
                           product: 'Cable Transert',
                           image: 'assets/imgComp/img_2.jpg',
-                          name: 'Angelot',
+                          nameOfFournisseur: 'Angelot',
+                          description:
+                              'Ce ci est un déscription simple ou détaillé du produits',
                           prix: 20000),
                       SizedBox(width: 10),
                       ScareBoxCat(
                           product: 'Cable Transert',
                           image: 'assets/imgComp/img_3.jpg',
-                          name: 'Angelot',
+                          nameOfFournisseur: 'Angelot',
+                          description:
+                              'Ce ci est un déscription simple ou détaillé du produits',
                           prix: 20000),
                       SizedBox(width: 10),
                       ScareBoxCat(
                           product: 'Cable Transert',
                           image: 'assets/imgComp/img_5.jpg',
-                          name: 'Angelot',
+                          nameOfFournisseur: 'Angelot',
+                          description:
+                              'Ce ci est un déscription simple ou détaillé du produits',
                           prix: 20000),
                       SizedBox(width: 10),
                       ScareBoxCat(
                           product: 'Cable Transert',
                           image: 'assets/imgComp/img_6.jpg',
-                          name: 'Angelot',
+                          nameOfFournisseur: 'Angelot',
+                          description:
+                              'Ce ci est un déscription simple ou détaillé du produits',
                           prix: 20000),
                       SizedBox(width: 10),
                     ],
@@ -178,43 +188,57 @@ class _HomePageState extends State<HomePage> {
                     children: const [
                       ScareBoxCat(
                           product: 'Chargeur',
-                          name: 'Dany',
+                          nameOfFournisseur: 'Dany',
+                          description:
+                              'Ce ci est un déscription simple ou détaillé du produits',
                           image: 'assets/imgComp/img_7.jpg',
                           prix: 20000),
                       SizedBox(width: 10),
                       ScareBoxCat(
                           product: 'PVC',
-                          name: 'Malazatrading',
+                          nameOfFournisseur: 'Malazatrading',
+                          description:
+                              'Ce ci est un déscription simple ou détaillé du produits',
                           image: 'assets/imgComp/img_8.jpg',
                           prix: 20000),
                       SizedBox(width: 10),
                       ScareBoxCat(
                           product: 'Cable Transert',
-                          name: 'Angelot',
+                          nameOfFournisseur: 'Angelot',
+                          description:
+                              'Ce ci est un déscription simple ou détaillé du produits',
                           image: 'assets/imgComp/img_9.jpg',
                           prix: 20000),
                       SizedBox(width: 10),
                       ScareBoxCat(
                           product: 'Cable Transert',
-                          name: 'Angelot',
+                          nameOfFournisseur: 'Angelot',
+                          description:
+                              'Ce ci est un déscription simple ou détaillé du produits',
                           image: 'assets/imgComp/img_10.jpg',
                           prix: 20000),
                       SizedBox(width: 11),
                       ScareBoxCat(
                           product: 'Cable Transert',
-                          name: 'Angelot',
+                          nameOfFournisseur: 'Angelot',
+                          description:
+                              'Ce ci est un déscription simple ou détaillé du produits',
                           image: 'assets/imgComp/img_11.jpg',
                           prix: 20000),
                       SizedBox(width: 12),
                       ScareBoxCat(
                           product: 'Cable Transert',
-                          name: 'Angelot',
+                          nameOfFournisseur: 'Angelot',
+                          description:
+                              'Ce ci est un déscription simple ou détaillé du produits',
                           image: 'assets/imgComp/img_12.jpg',
                           prix: 20000),
                       SizedBox(width: 13),
                       ScareBoxCat(
                           product: 'Cable Transert',
-                          name: 'Angelot',
+                          nameOfFournisseur: 'Angelot',
+                          description:
+                              'Ce ci est un déscription simple ou détaillé du produits',
                           image: 'assets/imgComp/img_13.jpg',
                           prix: 20000),
                     ],

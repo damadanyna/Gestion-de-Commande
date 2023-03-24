@@ -77,16 +77,56 @@ class RectBox extends StatelessWidget {
 class ScareBoxCat extends StatelessWidget {
   const ScareBoxCat({
     Key? key,
-    required this.name,
+    required this.nameOfFournisseur,
     required this.prix,
     required this.product,
     required this.image,
+    required this.description,
   }) : super(key: key);
-  final String name;
+  final String nameOfFournisseur;
   final int prix;
   final String product;
   final String image;
+  final String description;
 
+  static List<ScareBoxCat> listeOfScareBoxCat = const [
+    ScareBoxCat(
+        nameOfFournisseur: 'Name 1',
+        prix: 30000,
+        product: 'My Product',
+        description: 'Ce ci est un déscription simple ou détaillé du produits',
+        image: 'assets/imgComp/img_7.jpg'),
+    ScareBoxCat(
+        nameOfFournisseur: 'Name 1',
+        prix: 30000,
+        product: 'My Product',
+        description: 'Ce ci est un déscription simple ou détaillé du produits',
+        image: 'assets/imgComp/img_10.jpg'),
+    ScareBoxCat(
+        nameOfFournisseur: 'Name 1',
+        prix: 30000,
+        product: 'My Product',
+        description: 'Ce ci est un déscription simple ou détaillé du produits',
+        image: 'assets/imgComp/img_11.jpg'),
+    ScareBoxCat(
+        nameOfFournisseur: 'Name 1',
+        prix: 30000,
+        product: 'My Product',
+        description: 'Ce ci est un déscription simple ou détaillé du produits',
+        image: 'assets/imgComp/img_13.jpg'),
+    ScareBoxCat(
+        nameOfFournisseur: 'Name 1',
+        prix: 30000,
+        product: 'My Product',
+        description: 'Ce ci est un déscription simple ou détaillé du produits',
+        image: 'assets/imgComp/img_5.jpg'),
+    ScareBoxCat(
+        nameOfFournisseur: 'Name 1',
+        prix: 30000,
+        product: 'My Product',
+        description: 'Ce ci est un déscription simple ou détaillé du produits',
+        image: 'assets/imgComp/img_6.jpg'),
+  ];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -143,17 +183,170 @@ class ScareBoxCat extends StatelessWidget {
                                 color: Constants.myOrange,
                                 borderRadius: BorderRadius.circular(10)),
                             child: Text(
-                              getinitial(name),
+                              getinitial(nameOfFournisseur),
                               style: TextStyle(color: Constants.myWhite),
                             ),
                           ),
                           const SizedBox(
                             width: 7,
                           ),
-                          Text(getString7(name))
+                          Text(getString7(nameOfFournisseur))
                         ],
                       ),
-                      Text('\$$prix',
+                      Text('$prix Ar',
+                          style: TextStyle(
+                              color: Constants.myOrange,
+                              fontWeight: FontWeight.w700))
+                    ],
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  String getinitial(String name) {
+    return name.substring(0, 1);
+  }
+
+  String getString7(String name) {
+    if (name.length > 7) {
+      return '${name.substring(0, 5)}...';
+    }
+    return name;
+  }
+
+  String getString23(String product) {
+    if (product.length > 23) {
+      return '${product.substring(0, 20)}...';
+    }
+    return product;
+  }
+}
+
+class ScareBoxBoutique extends StatelessWidget {
+  const ScareBoxBoutique({
+    Key? key,
+    required this.nameOfFournisseur,
+    required this.prix,
+    required this.product,
+    required this.image,
+    required this.description,
+  }) : super(key: key);
+  final String nameOfFournisseur;
+  final int prix;
+  final String product;
+  final String image;
+  final String description;
+
+  static List<ScareBoxBoutique> listeOfScareBoxBoutique = const [
+    ScareBoxBoutique(
+        nameOfFournisseur: 'Name 1',
+        prix: 30000,
+        product: 'My Product',
+        description: 'Ce ci est un déscription simple ou détaillé du produits',
+        image: 'assets/imgComp/img_7.jpg'),
+    ScareBoxBoutique(
+        nameOfFournisseur: 'Name 1',
+        prix: 30000,
+        product: 'My Product',
+        description: 'Ce ci est un déscription simple ou détaillé du produits',
+        image: 'assets/imgComp/img_10.jpg'),
+    ScareBoxBoutique(
+        nameOfFournisseur: 'Name 1',
+        prix: 30000,
+        product: 'My Product',
+        description: 'Ce ci est un déscription simple ou détaillé du produits',
+        image: 'assets/imgComp/img_11.jpg'),
+    ScareBoxBoutique(
+        nameOfFournisseur: 'Name 1',
+        prix: 30000,
+        product: 'My Product',
+        description: 'Ce ci est un déscription simple ou détaillé du produits',
+        image: 'assets/imgComp/img_13.jpg'),
+    ScareBoxBoutique(
+        nameOfFournisseur: 'Name 1',
+        prix: 30000,
+        product: 'My Product',
+        description: 'Ce ci est un déscription simple ou détaillé du produits',
+        image: 'assets/imgComp/img_5.jpg'),
+    ScareBoxBoutique(
+        nameOfFournisseur: 'Name 1',
+        prix: 30000,
+        product: 'My Product',
+        description: 'Ce ci est un déscription simple ou détaillé du produits',
+        image: 'assets/imgComp/img_6.jpg'),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height * .3,
+      width: size.width * .45,
+      decoration: BoxDecoration(
+        color: Constants.myGrey.withOpacity(.4),
+        borderRadius: BorderRadius.circular(7),
+        border: Border.all(color: Constants.myGrey.withOpacity(.2)),
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          filterQuality: FilterQuality.low,
+          image: AssetImage(
+            image,
+          ),
+        ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            height: size.height * .1,
+            decoration: BoxDecoration(
+              color: Constants.myWhite,
+              borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(7),
+                  bottomRight: Radius.circular(7)),
+            ),
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 7),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    getString23(product),
+                    style: TextStyle(
+                        color: Constants.myBackground.withOpacity(.5)),
+                  ),
+                  const SizedBox(
+                    height: 7,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 3, vertical: 1),
+                            decoration: BoxDecoration(
+                                color: Constants.myOrange,
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Text(
+                              getinitial(nameOfFournisseur),
+                              style: TextStyle(color: Constants.myWhite),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 7,
+                          ),
+                          Text(getString7(nameOfFournisseur))
+                        ],
+                      ),
+                      Text('$prix Ar',
                           style: TextStyle(
                               color: Constants.myOrange,
                               fontWeight: FontWeight.w700))

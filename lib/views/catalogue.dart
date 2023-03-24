@@ -1,6 +1,8 @@
+import 'package:ecommerce_app/views/components/description.dart';
 import 'package:ecommerce_app/views/model/constant.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 import 'components/boxWidget.dart';
 
@@ -12,6 +14,7 @@ class CataloguePage extends StatefulWidget {
 }
 
 class _CataloguePageState extends State<CataloguePage> {
+  List<ScareBoxCat> listeOfBox = ScareBoxCat.listeOfScareBoxCat;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -32,61 +35,30 @@ class _CataloguePageState extends State<CataloguePage> {
           ),
         ),
         Container(
-          height: size.height * .768,
+          height: size.height * .73,
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: GridView(
-            scrollDirection: Axis.vertical,
-            dragStartBehavior: DragStartBehavior.start,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, mainAxisSpacing: 17, crossAxisSpacing: 17),
-            children: const [
-              ScareBoxCat(
-                  product: 'Cable Transert',
-                  image: 'assets/imgComp/img_7.jpg',
-                  name: 'Angelot',
-                  prix: 20000),
-              ScareBoxCat(
-                  product: 'Cable Transert',
-                  image: 'assets/imgComp/img_8.jpg',
-                  name: 'Angelot',
-                  prix: 20000),
-              ScareBoxCat(
-                  product: 'Cable Transert',
-                  image: 'assets/imgComp/img_9.jpg',
-                  name: 'Angelot',
-                  prix: 20000),
-              ScareBoxCat(
-                  product: 'Cable Transert',
-                  image: 'assets/imgComp/img_10.jpg',
-                  name: 'Angelot',
-                  prix: 20000),
-              ScareBoxCat(
-                  product: 'Chargeur',
-                  name: 'Dany',
-                  image: 'assets/imgComp/img_4.jpg',
-                  prix: 20000),
-              ScareBoxCat(
-                  product: 'Cable Transert',
-                  image: 'assets/imgComp/img_2.jpg',
-                  name: 'Angelot',
-                  prix: 20000),
-              ScareBoxCat(
-                  product: 'Cable Transert',
-                  image: 'assets/imgComp/img_3.jpg',
-                  name: 'Angelot',
-                  prix: 20000),
-              ScareBoxCat(
-                  product: 'Cable Transert',
-                  image: 'assets/imgComp/img_5.jpg',
-                  name: 'Angelot',
-                  prix: 20000),
-              ScareBoxCat(
-                  product: 'Cable Transert',
-                  image: 'assets/imgComp/img_6.jpg',
-                  name: 'Angelot',
-                  prix: 20000),
-            ],
-          ),
+          child: GridView.builder(
+              scrollDirection: Axis.vertical,
+              dragStartBehavior: DragStartBehavior.start,
+              itemCount: listeOfBox.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, mainAxisSpacing: 17, crossAxisSpacing: 17),
+              itemBuilder: (BuildContext context, int index) {
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        PageTransition(
+                            child: Descriptions(
+                              product: index,
+                            ),
+                            type: PageTransitionType.fade));
+                  },
+                  child: listeOfBox[index],
+                );
+              }
+              /* 0344297050 */
+              ),
         ),
       ],
     );
